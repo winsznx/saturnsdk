@@ -1,5 +1,5 @@
-import { StacksMainnet, StacksTestnet, StacksDevnet, StacksNetwork } from "@stacks/network";
-import { SaturnConfig, NetworkType } from "./types";
+import { STACKS_MAINNET, STACKS_TESTNET, STACKS_DEVNET, StacksNetwork } from "@stacks/network";
+import { SaturnConfig } from "./types";
 import { SATURN_CORE_ADDRESSES, DEFAULT_NETWORK } from "./constants";
 
 export class SaturnClient {
@@ -8,22 +8,19 @@ export class SaturnClient {
 
   constructor(config: SaturnConfig = { network: DEFAULT_NETWORK }) {
     this.coreAddress = config.coreAddress || SATURN_CORE_ADDRESSES[config.network];
-    
+
     switch (config.network) {
       case "mainnet":
-        this.network = new StacksMainnet();
+        this.network = STACKS_MAINNET;
         break;
       case "testnet":
-        this.network = new StacksTestnet();
+        this.network = STACKS_TESTNET;
         break;
       case "devnet":
-        this.network = new StacksDevnet();
+        this.network = STACKS_DEVNET;
         break;
       default:
-        this.network = new StacksMainnet();
+        this.network = STACKS_MAINNET;
     }
   }
-
-  // Modules will be initialized here
-  // get vault() { return new VaultModule(this); }
 }

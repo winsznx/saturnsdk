@@ -1,5 +1,3 @@
-import { StacksNetwork } from "@stacks/network";
-
 export type NetworkType = "mainnet" | "testnet" | "devnet";
 
 export interface SaturnConfig {
