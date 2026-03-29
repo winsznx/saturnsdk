@@ -12,3 +12,4 @@ export const CONTRACT_NAMES = {
 };
 
 export const DEFAULT_NETWORK = "mainnet";
+export const DEFAULT_VAULT_THROTTLE = 1000000;
